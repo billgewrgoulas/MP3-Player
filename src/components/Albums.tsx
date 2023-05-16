@@ -1,6 +1,6 @@
 
 const Albums = () => {
-  return (<h1>Albums a</h1>);
+  return (<h1>Albums a lo t</h1>);
 }
 
 export default Albums;
