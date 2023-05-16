@@ -1,0 +1,19 @@
+
+.wrapper{
+  height: 6em;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #79b3ea;
+}
+
+audio { 
+  width: 60%; 
+  display: block;
+}
