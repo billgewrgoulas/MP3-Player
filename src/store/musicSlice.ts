@@ -35,9 +35,6 @@ const musicSlice = createSlice({
       state.playActive = true;
       state.activeSong = action.payload;
     },
-    loadSongs: (state, action) => {
-
-    }
   }
 });
 
