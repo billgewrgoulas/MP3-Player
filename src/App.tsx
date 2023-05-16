@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import LoginPage from './pages/Login';
+import RegisterPage, { RegisterAction } from './pages/Register';
+import HomePage from './pages/Home';
+import './App.module.css';
+import Dashboard from './components/Dashboard';
+import MusicList from './components/MusicList';
+import Artists from './components/Artists';
+import Albums from './components/Albums';
+
+const router = createBrowserRouter([
+  {path: '/login', element: <LoginPage />},
+  {path: '/register', element: <RegisterPage />, action: RegisterAction},
+  {path: '', element: <HomePage />, children: [
+    {path: '/', element: <Dashboard />, children: [
+      {path: '/songs', element: <MusicList />},
+      {path: '/songs/artists', element: <Artists />},
+      {path: '/songs/albums', element: <Albums />},
+    ]}
+  ]}
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return (<RouterProvider router={router}/>);
 }
 
 export default App;

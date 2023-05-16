@@ -1,0 +1,10 @@
+
+.main{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: calc(100vh - 6em);
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
