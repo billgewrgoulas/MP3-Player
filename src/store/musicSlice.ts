@@ -12,7 +12,7 @@ export interface Song{
 }
 
 export interface MusicState {
-  songs: Array<Song>;
+  songs: Song[];
   activeSong: number;
   playActive: boolean;
 }
@@ -35,9 +35,6 @@ const musicSlice = createSlice({
       state.playActive = true;
       state.activeSong = action.payload;
     },
-    loadSongs: (state, action) => {
-
-    }
   }
 });
 
